@@ -4,6 +4,7 @@ import "./homePage.css";
 //components
 import Directory from "../../components/directoty/directory";
 
+
 function HomePage() {
   return (
     <>
