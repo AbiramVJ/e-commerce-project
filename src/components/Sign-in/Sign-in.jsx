@@ -1,37 +1,51 @@
 import React from 'react';
 import { useState } from 'react';
 
+//style
+import './signIn.style.css'
+
+
+//components
+import FormInput from '../sign-in-and-sign-up.jsx/SignInAndUp';
+import CustomButton from '../custom-button/CustomButton';
+
+//Google auth
+import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 
 function Signin(props) {
 
-    const[userData,setUserData] = useState({
+    const[user,setUser] = useState({
         email:"",
         password:""
     });
 
     const handleSubmit = event => {
         event.preventDefault();
-    
-        setUserData({ email: '', password: '' });
+        setUser({ email: '', password: '' });
       };
     
     const handleChange = event => {
         const { value, name } = event.target;
-    
-        setUserData({ [name]: value });
+        setUser({ [name]: value });
       };
     
     return (
         <div className='sign-in'>
             <h2>I already have an account</h2>
             <span>Sign in with your email and password</span>
-            <form >
-                <input name='email' type='email' value={userData.email} required/>
+            <form onSubmit={handleSubmit}>
                 <label>Email</label>
-                <input name='password' type='password' value={userData.password} require/>
+                <FormInput name='email' type='email'  value={user.email} handleChange={handleChange} />
+
                 <label>password</label>
-                <input type="submit" value="submit from"/>
+                <FormInput name='password' type='password'   value={user.password} handleChange={handleChange}  />
+                
+                <div className='btn'>
+                    <CustomButton type="submit" value="submit from"> SIGN IN</CustomButton>
+                    <CustomButton onClick ={signInWithGoogle} isGoogleSignIn > SIGN IN WITH GOOGLE</CustomButton>
+                </div>
+               
             </form>
         </div>
     )
