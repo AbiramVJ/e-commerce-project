@@ -6,7 +6,7 @@ import Collactiontems from '../collection-items/Collaction.items';
 
 function PriviewCollection(props) {
     
-    console.log(props.items.lenth);
+   
     return (
         <div className='collection-preview'>
             <h1>{props.title}</h1>
