@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link,Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 //PAGES
 import HomePage from "./pages/homepage/HomePage";
@@ -38,16 +38,40 @@ function App() {
 
   return (
     <>
-      <Router>
+      
         <Header currentUser={user.currentUser} />
         <Routes>
           <Route exact path="/home" element={<HomePage />} />
           <Route exact path="/shop" element={<Shop />} />
-          <Route exact path="/Signin" element={<SignInSignUp />} />
+         
+          <Route
+          exact
+          path='/signin'
+          element={
+            user.currentUser ? (
+              <Navigate to='/home' />
+            ) : (
+              <SignInSignUp />
+            )
+          }
+          />
+          
         </Routes>
-      </Router>
+      
     </>
   );
 }
 
 export default App;
+
+// <Route
+// exact
+// path='/signin'
+// render={() =>
+//   user.currentUser ? (
+//     <Navigate to='/home' />
+//   ) : (
+//     <SignInSignUp />
+//   )
+// }
+// />

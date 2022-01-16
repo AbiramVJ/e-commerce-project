@@ -13,8 +13,7 @@
     font-weight: bolder;
     border: none;
     cursor: pointer;
-
-   
+ 
     
 }
 .custom-button:hover {
@@ -29,4 +28,14 @@
     background-color:#570a1b;
     border: none;
     
+  }
+  .inverted{
+    background-color: white;
+    color:white;
+    border: none;
+  }
+  .inverted:hover{
+    background-color: black;
+    color:white;
+    border:none;
   }

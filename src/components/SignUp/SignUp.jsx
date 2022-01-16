@@ -13,38 +13,42 @@ import { auth,createUserProfileDocument } from '../../firebase/firebase.utils';
 
 function SignUp() {
 
-    // const[user,setUser] = useState({
-    //     displayName:'',
-    //     email:'',
-    //     password:'',
-    //     confirmPassword:''
-    // })
-    // console.log(user);
-    const [displayName, setDisplayName]=useState("");
-    const [email, setEmail]=useState("");
-    const [password, setPassword]=useState("");
-    const [confirmPassword, setConfirmPassword]=useState("");
+     const[user,setUser] = useState({
+        displayName:'',
+        email:'',
+        password:'',
+        confirmPassword:''
 
-  
-    async function UserPost(event) {
-      const userDetail={
-          "displayName":displayName,
-         "email":email,
-         "password":password,
-         "confirmPassword":confirmPassword,
+    })
+
+  const handleChange = (event) =>{
+    const {name,value} = event.target;
+    //console.log(name,value);
+    setUser((prev) => {
+      return{
+        ...prev,
+        [name]:value
       }
+    })
+  }
 
-
-      console.log(userDetail);
+    async function submit(event) {
+         const userDetail={
+               "displayName":user.displayName,
+              "email":user.email,
+              "password":user.password,
+             "confirmPassword":user.confirmPassword,
+           }
+      
       event.preventDefault();
 
-      if(password!==confirmPassword){
+      if(user.password!==user.confirmPassword){
         alert("passwords don't match");
            return;
       }
       try{
-        const { user } = await auth.createUserWithEmailAndPassword( email, password);
-        await createUserProfileDocument(user, { displayName });
+        const { user } = await auth.createUserWithEmailAndPassword( userDetail.email, userDetail.password);
+        await createUserProfileDocument(user);
 
       }catch(error){
         console.log(error);
@@ -52,39 +56,6 @@ function SignUp() {
      
     }
       
-
-
-  
-
-    // const handleSubmit = async event => {
-    //     event.preventDefault();
-    
-    //     const { displayName, email, password, confirmPassword } = setUser;
-    
-    //     if (password !== confirmPassword) {
-    //       alert("passwords don't match");
-    //       return;
-    //     }
-    
-    //     try {
-    //       const { user } = await auth.createUserWithEmailAndPassword(
-    //         email,
-    //         password
-    //       );
-    
-    //       await createUserProfileDocument(user, { displayName });
-    
-    //       setUser({
-    //         displayName: '',
-    //         email: '',
-    //         password: '',
-    //         confirmPassword: ''
-    //       });
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   };
-    
     
      
     return (
@@ -97,37 +68,37 @@ function SignUp() {
         <form className='sign-up-form'>
           <FormInput
             type='text'
-            
-            value={displayName}
-            onChange={(e)=>setDisplayName(e.target.value)}
+            name ="displayName"
+            value={user.displayName}
+            onChange={handleChange}
             label='Display Name'
             required
           />
           <FormInput
             type='email'
-            
-            value={email}
-            onChange={(e)=>setEmail(e.target.value)}
+            name="email"
+            value={user.email}
+            onChange={handleChange}
             label='Email'
             required
           />
           <FormInput
             type='password'
-            
-            value={password}
-            onChange={(e)=>setPassword(e.target.value)}
+            name = "password"
+            value={user.password}
+            onChange={handleChange}
             label='Password'
             required
           />
           <FormInput
             type='password'
-            
-            value={confirmPassword}
-            onChange={(e)=>setConfirmPassword(e.target.value)}
+            name="confirmPassword"
+            value={user.confirmPassword}
+            onChange={handleChange}
             label='Confirm Password'
             required
           />
-          <CustomButton type='submit' onClick={UserPost}>SIGN UP</CustomButton>
+          <CustomButton type='submit' onClick={submit} >SIGN UP</CustomButton>
         </form>
       </div>
             

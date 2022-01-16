@@ -1,6 +1,8 @@
 import React from 'react'
 import './collection.style.css'
 
+import CustomButton from '../custom-button/CustomButton';
+
 function Collactiontems(props) {
     return (
         <div className='collection-item'>
@@ -9,7 +11,7 @@ function Collactiontems(props) {
                 <span className='name'>{props.name}</span>
                 <span className='price'>{props.price}</span>
             </div>
-           
+           <CustomButton inverted >Add to Cart</CustomButton>
 
         </div>
     )
