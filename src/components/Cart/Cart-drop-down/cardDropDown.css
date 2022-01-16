@@ -19,7 +19,7 @@
 } */
 
 .cart-dropdown {
-    position: absolute;
+    
     width: 240px;
     height: 290px;
     display: flex;
@@ -30,6 +30,7 @@
     top: 90px;
     right: 40px;
     z-index: 5;
+    box-shadow: 5px 5px 5px grey;
 }
     .cart-items {
       height: 240px;
@@ -37,7 +38,22 @@
       flex-direction: column;
       overflow-y: scroll;
     }
-  
+.root{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+  .root-card{
+    height: 330px;
+    width: 1030px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 5px 5px 5px grey;
+    text-align: center;
+    font-weight: 700;
+    font-size: x-large;
+  }
   
   
   

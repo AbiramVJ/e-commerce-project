@@ -5,11 +5,11 @@ import { useState } from 'react';
 import './signUp.css';
 
 //components
-import FormInput from '../sign-in-and-sign-up.jsx/SignInAndUp';
-import CustomButton from '../custom-button/CustomButton';
+import FormInput from '../sign-in-and-sign-up/SignInAndUp';
+import CustomButton from '../../custom-button/CustomButton';
 
 //database
-import { auth,createUserProfileDocument } from '../../firebase/firebase.utils';
+import { auth,createUserProfileDocument } from '../../../firebase/firebase.utils';
 
 function SignUp() {
 

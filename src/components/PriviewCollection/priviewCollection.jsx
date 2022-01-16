@@ -3,12 +3,16 @@ import './priview.collection.css';
 
 //component
 import Collactiontems from '../collection-items/Collaction.items';
+import CardDropDown from '../Cart/Cart-drop-down/CardDropDown';
 
 function PriviewCollection(props) {
     
    
     return (
+        <>
+        
         <div className='collection-preview'>
+        
             <h1>{props.title}</h1>
             <div className='preview'>
             
@@ -20,6 +24,7 @@ function PriviewCollection(props) {
              
             </div>
         </div>
+        </>
     )
 }
 

@@ -1,4 +1,4 @@
-/* .collection-item {
+/* /* .collection-item {
     width: 22%;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@
       }
    */
 
-
+/* 
    .collection-item {
       width: 22%;
       display: flex;
@@ -57,21 +57,7 @@
         margin-bottom: 5px;
       }
     
-      .custom-button {
-        width: 50%;
-        opacity: 0.7;
-        position: absolute;
-        top: 250px;
-        display: none;
-        color: black;
-        font-weight: 400;
-      }
-    
-  
-        .custom-button {
-          opacity: 0.85;
-          display: flex;
-        }
+   
       
     
       .collection-footer {
@@ -90,4 +76,68 @@
           width: 10%;
         }
   
+     */
+
+     .collection-item {
+      width: 22%;
+      display: flex;
+      flex-direction: column;
+      height: 350px;
+      align-items: center;
+      position: relative;
+      box-shadow: 5px 5px 5px  grey;
+      padding: 20px;
+     }
+      .image {
+        width: 100%;
+        height: 95%;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 5px;
+      }
     
+      .custom-button-cart {
+        min-width: 165px;
+        width: auto;
+        height: 50px;
+        letter-spacing: 0.5px;
+        line-height: 50px;
+        padding: 0 35px 0 35px;
+        font-size: 15px;
+        background-color: black;
+        color: white;
+        text-transform: uppercase;
+        font-family: 'Open Sans Condensed';
+        font-weight: bolder;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+       position: absolute;
+       bottom: 50px;
+       opacity: 0.8;
+      }
+      .custom-button-cart:hover {
+          background-color: white;
+          color: black;
+          border: 1px solid black;
+        }
+      
+      
+    
+      .collection-footer {
+        width: 100%;
+        height: 5%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+      }
+        .name {
+          width: 90%;
+          margin-bottom: 15px;
+        }
+    
+        .price {
+          width: 10%;
+        }
+  

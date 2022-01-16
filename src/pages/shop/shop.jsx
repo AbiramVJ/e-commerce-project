@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import CardDropDown from '../../components/Cart/Cart-drop-down/CardDropDown';
+
 //components
 import PriviewCollection from '../../components/PriviewCollection/priviewCollection';
 
@@ -253,16 +255,24 @@ function Shop() {
         }
       ])
     return (
+      <>
+      {
+        shopData.filter((item,idx)=>idx<1).map((shopData,index)=>(
+          <CardDropDown {...shopData} key={index}/>
+    ))
+      }
+      
       
         <div className='shop-page'>
+        
         {shopData.map((shopData,index)=>(
-          <PriviewCollection {...shopData} key={index}/>
+          <PriviewCollection {...shopData} key={index}/>   
+          
       ))}
-
-    
-  
       
         </div>
+        </>
+        
     )
 }
 

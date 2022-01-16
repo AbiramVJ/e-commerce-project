@@ -4,8 +4,8 @@ import React from 'react';
 import './signInSignUp.css'
 
 //components
-import Signin from '../../components/Sign-in/Sign-in';
-import SignUp from '../../components/SignUp/SignUp';
+import Signin from '../../components/auth/Sign-in/Sign-in';
+import SignUp from '../../components/auth/SignUp/SignUp';
 
 function SignInSignUp() {
     return (

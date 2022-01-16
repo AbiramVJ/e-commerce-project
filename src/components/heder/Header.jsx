@@ -6,8 +6,9 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 
 //component
-import CartIcon from '../cart-icon/cart-icon';
-import CardDropDown from '../Cart-drop-down/CardDropDown';
+
+import CartIcon from '../Cart/cart-icon/cart-icon';
+import CardDropDown from '../Cart/Cart-drop-down/CardDropDown';
 
 import {ReactComponent as Logo} from '../../assets/crown.svg';
 
@@ -44,10 +45,7 @@ const hidden = false;
                     <CartIcon/>
 
                 </div>
-                {
-                    hidden ? true : <CardDropDown/>
-                }
-                
+             
                 
                 
         </div>

@@ -5,11 +5,12 @@ import { useState } from "react";
 import "./signIn.style.css";
 
 //components
-import FormInput from "../sign-in-and-sign-up.jsx/SignInAndUp";
-import CustomButton from "../custom-button/CustomButton";
+
+import FormInput from '../sign-in-and-sign-up/SignInAndUp'
+import CustomButton from "../../custom-button/CustomButton";
 
 //Google auth
-import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, signInWithGoogle } from "../../../firebase/firebase.utils";
 
 function Signin(props) {
 
@@ -70,7 +71,7 @@ function Signin(props) {
             {" "}
             SIGN IN
           </CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+          <CustomButton onClick={signInWithGoogle}>
             {" "}
             SIGN IN WITH GOOGLE
           </CustomButton>
