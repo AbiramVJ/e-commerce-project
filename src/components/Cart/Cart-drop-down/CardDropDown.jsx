@@ -13,7 +13,6 @@ function CardDropDown(props) {
     return (
         <>
         <div className='root'>
-        
 
         <div className='cart-dropdown'>
         
@@ -27,7 +26,10 @@ function CardDropDown(props) {
             </div>
             <CustomButton>GO TO CHECKOUT</CustomButton>
         </div>
-        <div className='root-card'>enjoy our product</div>
+        <div className='root-card'>
+        <img className='image-root' src="village.jpg" alt="image"/>
+        <p className='image-text'>ENJOY YOUR HOME MADE PRODUCT</p>
+        </div>
         </div>
         </>
         

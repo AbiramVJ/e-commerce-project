@@ -2,7 +2,7 @@ import React from 'react';
 import './priview.collection.css';
 
 //component
-import Collactiontems from '../collection-items/Collaction.items';
+import Collactiontems from '../ShopComponets/collection-items/Collaction.items';
 import CardDropDown from '../Cart/Cart-drop-down/CardDropDown';
 
 function PriviewCollection(props) {

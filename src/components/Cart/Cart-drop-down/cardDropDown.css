@@ -43,16 +43,42 @@
     flex-direction: row;
     justify-content: space-around;
     
+    
   }
   .root-card{
     height: 330px;
     width: 1030px;
-    border: 1px solid black;
+    border: 1px;
     background-color: white;
     box-shadow: 5px 5px 5px grey;
-    text-align: center;
+   
     font-weight: 700;
     font-size: x-large;
+    background-size: cover;
+    border-radius: 20px;
+    
+    
+    
+  }
+  .image-root{
+    background-size: cover;
+     width: 1030px;
+     height: 330px;
+     border-radius: 20px;
+     position: absolute;
+
+     opacity: 0.85;
+  }
+  .image-text{
+  position: absolute;
+  color: black;
+  padding: 100px 350px;
+  font-size: xx-large;
+  font-weight: 900;
+  font-family:Arial, Helvetica, sans-serif;
+  text-shadow: 2px;
+  
+  
   }
   
   

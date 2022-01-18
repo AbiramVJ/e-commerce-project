@@ -1,8 +1,8 @@
 import React from 'react'
 import './collection.style.css'
 
-import CustomButton from '../custom-button/CustomButton';
-import CardDropDown from '../Cart/Cart-drop-down/CardDropDown';
+import CustomButton from '../../custom-button/CustomButton';
+import CardDropDown from '../../Cart/Cart-drop-down/CardDropDown';
 
 function Collactiontems(props) {
     return (
